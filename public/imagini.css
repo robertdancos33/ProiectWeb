@@ -1,0 +1,60 @@
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.image {
+    width: 100%;
+    max-width: 200px;
+    /* Dimensiunea maximă a imaginilor */
+    margin: 10px;
+    border: 2px solid #ccc;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.image:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+p {
+    text-align: center;
+    margin-top: 5px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.button {
+    padding: 8px 20px;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.buy {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+}
+
+.sell {
+    background-color: #f44336;
+    color: white;
+    border: none;
+}
+
+.fa-star {
+    color: gold;
+    margin: 0 2px;
+}
+
+@media (max-width: 600px) {
+    .image {
+        max-width: calc(50% - 20px);
+    }
+}
