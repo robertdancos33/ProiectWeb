@@ -1,17 +1,29 @@
 .container {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
     justify-content: center;
-    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.item {
+    min-width: 200px;
+    text-align: center;
+    background: white;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .image {
     width: 100%;
-    max-width: 200px;
-    /* Dimensiunea maximă a imaginilor */
-    margin: 10px;
+    max-width: 100%;
+    height: auto;
     border: 2px solid #ccc;
+    border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .image:hover {
@@ -21,31 +33,47 @@
 
 p {
     text-align: center;
-    margin-top: 5px;
+    margin-top: 10px;
+    font-size: 16px;
+    font-weight: bold;
 }
 
 .buttons {
     display: flex;
     justify-content: center;
-    margin-bottom: 10px;
+    margin-top: 10px;
+    gap: 10px;
 }
 
 .button {
     padding: 8px 20px;
     margin: 0 5px;
     cursor: pointer;
+    border-radius: 5px;
+    border: none;
+    transition: background-color 0.3s;
 }
 
 .buy {
     background-color: #4CAF50;
     color: white;
-    border: none;
+}
+
+.buy:hover {
+    background-color: #45a049;
 }
 
 .sell {
     background-color: #f44336;
     color: white;
-    border: none;
+}
+
+.sell:hover {
+    background-color: #e41e26;
+}
+
+.rating {
+    margin-top: 10px;
 }
 
 .fa-star {
@@ -54,7 +82,24 @@ p {
 }
 
 @media (max-width: 600px) {
-    .image {
-        max-width: calc(50% - 20px);
+    .container {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
     }
+}
+
+.filter-btn {
+    padding: 10px 20px;
+    margin: 20px auto;
+    background-color: rgb(17, 42, 78);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(39, 78, 151, 0.1);
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.filter-btn:hover {
+    background-color: rgb(14, 35, 65);
+    box-shadow: 0 6px 12px rgba(39, 78, 151, 0.2);
 }
